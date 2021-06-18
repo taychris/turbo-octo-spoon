@@ -1,0 +1,34 @@
+<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+    <ul>
+        <li>Menu</li>
+    </ul>
+</nav>
+  
+<!-- Sidebar navigation -->
+<form [formGroup]="this.menuItemForm">
+    <label for="menuItemName">Menu Item Name:</label>
+    <input placeholder="New menu item name.." formControlName="menuItemName" #menuItemName type="text" required />
+    <label for="menuItemDetails">Menu Item Details:</label>
+    <input placeholder="Menu item details.." formControlName="menuItemDetails" #menuItemDetails type="text" required />
+    <label for="smallPrice">Small Price:</label>
+    <input placeholder="Price for small.." formControlName="smallPrice" #smallPrice type="number" required />
+    <label for="bigPrice">Big Price:</label>
+    <input placeholder="Price for big.." formControlName="bigPrice" #bigPrice type="number" required />
+    <button (click)="onSubmit()" [disabled]="!this.menuItemForm.valid">
+        Submit
+    </button>
+</form>  
+
+<div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+        <tbody>
+            <tr *ngFor="let doc of menuItems">
+                <td>{{doc.menuItemName}}</td>
+                <td>{{doc.menuItemDetails}}</td>
+                <td>{{doc.smallPrice}}</td>
+                <td>{{doc.bigPrice}}</td>
+                <td><button class="btn delete-btn">&#x2716;</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

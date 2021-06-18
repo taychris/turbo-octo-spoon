@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "saypizza-firebase"
+    }
+  },
+  "defaultProject": "saypizza-firebase",
+  "cli": {
+    "analytics": false
+  }
 }
